@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>GAMING_PSEUDO</title>
+    <style>
+      body{
+        background:#ccc;
+      }
+      .contenaier{
+        text-align: center;
+        margin-top: 100px;
+        background:linear-gradient(160deg,red,lightblue);
+        padding:20px;
+      }
+      #output{
+        min-width:200px;
+        padding:10px;
+        position:fixed;
+        background:rgba(255,255,255,0.5);
+      }
+      button{
+        background:rgba(0,255,0,0.3);
+        border-radius:6px;
+        height:30px;
+        width:200px;
+        cursor:pointer;
+        margin-top: 100px;
+      }
+      button:hover{
+        background:rgba(0,0,255,0.3);
+      }
+      h2{
+        color:gold;
+      }
+      #alertBox {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(0, 255, 0, 0.7);
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        display: none;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenaier">
+      <h2>PSEUDO🎮 GAMING</h2>
+      <br>
+      <h3>GIRLS✅</h3>
+      <br>
+      <b id="output"></b>
+      <button onclick="go()">change</button>
+      <button onclick="copyText()">Copy Name</button>
+    </div>
+
+    <div id="alertBox">Name copied successfully!</div>
+
+    <script>
+      function go() {
+        const name = [
+          "Luna☆", "Vanessa_Xx", "FrostyQueen", "VioletMist", "Crystal_Girl", "SapphireHeart", "StarryNights", "Bella_Vibes", 
+          "CyberSiren", "GoddessMystique", "ShadowGoddess", "DivaVibes", "EternalBeauty", "ToxicAngel", "PhoenixGoddess", 
+          "DarkAngel", "NeonPrincess", "PrincessAura", "NightMistress", "Lily_Shadow", "DreamyQueen", "MysticPrincess", 
+          "QueenOfNight", "RebelGoddess", "Siren_Storm", "AuroraX", "MysticDiva", "SilverLynx", "Midnight_Star", "VenusQueen", 
+          "DarkRose", "CyberPrincess", "TwilightQueen", "AmyxQueen", "Rose_Empress", "PrincessLily", "RavenSiren", "MoonlightLady", 
+          "CelestialQueen", "EchoGirl", "OpalMystique", "FrostLily", "GlitterAngel", "Shadow_Queen", "StarlightDiva", "BlueMoon", 
+          "PixieDawn", "Eclipse_Empress", "NovaPrincess", "SilentSiren", "MysticDawn", "AzureQueen", "VelvetDiva", "DiamondPrincess", 
+          "Radiant_Lily", "MoonlitBeauty", "MidnightRaven", "VelvetMist", "GoldenPhoenix", "Ivory_Storm", "FrostBreeze", "ElectricSiren", 
+          "Neon_Queen", "CelestialDiva", "EternalRaven", "SilverPhoenix", "CrystalPrincess", "LunarMist", "Violet_Empress", "ElectricLily", 
+          "MysticRose", "ShadowPrincess", "StarlitQueen", "IvoryDawn", "RoseMist", "FrostQueen", "DreamQueen", "DiamondMist", 
+          "BlueShadow", "LilyMystic", "MoonlightQueen", "TwilightDiva", "AbyssQueen", "AstralPrincess", "RosePetal", "SerenityDiva", 
+          "AmethystQueen", "NeonSapphire", "LunaPrincess", "FireMistress", "AquaGoddess", "CosmicEmpress", "DarkSiren", "CrimsonDiva", 
+          "RubyPrincess", "SilverMist", "AzureEmpress", "StarShine", "IvoryPrincess", "FrozenEmpress", "DiamondStorm", "MoonlitPrincess", 
+          "NovaMist", "FrostedQueen", "MysticMoon", "EmeraldSiren", "ElectricMistress", "DarkRose_Queen", "CrimsonPrincess", "SapphireDiva", 
+          "NeonViolet", "MysticCelestial", "RadiantPrincess", "StarryQueen", "GlitteringRose", "CelestialMistress", "FrozenDiva", "TwilightMist", 
+          "OpalQueen", "BlueDawn", "StarlightPrincess", "ShimmeringMist", "ElectricPrincess", "LunarPrincess", "MoonEmpress", "BlueSapphire", 
+          "GoldenCelestial", "VenusMistress", "NightstarQueen", "EmeraldPrincess", "LilyShadow_Queen", "PurpleDawn", "SirenQueen", "Celestial_Empress", 
+          "MoonlitSiren", "RadiantEmpress", "CrystalMystic", "StarryMistress", "AbyssMist", "CrimsonMoon", "SilverRose", "BluePhoenix", 
+          "GoldenMistress", "FrostEmpress", "ShiningSiren", "VenusGoddess", "MoonShine", "OpalMistress", "RadiantMist", "FrostyMist", 
+          "PurpleMist", "AquaPrincess", "ShadowDawn", "EmpressMist", "DawnStar", "NebulaPrincess", "TwilightSiren", "VelvetMoon", 
+          "SilverMoon", "GoldenStar", "TwilightPhoenix", "AbyssSiren"
+        ];
+        
+        const autchange = name[Math.floor(Math.random() * name.length)];
+        const fonts = ["Arial", "Courier New", "Georgia", "Lucida Console", "Verdana", "Tahoma", "Times New Roman"];
+        const selectedFont = fonts[Math.floor(Math.random() * fonts.length)];
+
+        document.getElementById('output').innerHTML = `<span style="font-family:${selectedFont};">${autchange}</span>`;
+      }
+
+      function copyText() {
+        const output = document.getElementById('output').innerText;
+        if (output) {
+          navigator.clipboard.writeText(output).then(function() {
+            showAlert();
+          }).catch(function(err) {
+            console.error('Error copying text: ', err);
+          });
+        }
+      }
+
+      function showAlert() {
+        const alertBox = document.getElementById('alertBox');
+        alertBox.style.display = 'block';
+        setTimeout(function() {
+          alertBox.style.display = 'none';
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

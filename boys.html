@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>GAMING_PSOEUDO</title>
+    <style>
+      body{
+        background:#ccc;
+      }
+      .contenaier{
+        text-align: center;
+        margin-top: 100px;
+        background:linear-gradient(160deg,red,lightblue);
+        padding:20px;
+      }
+      #output{
+        min-width:200px;
+        padding:10px;
+        position:fixed;
+        background:rgba(255,255,255,0.5);
+      }
+      button{
+        background:rgba(0,255,0,0.3);
+        border-radius:6px;
+        height:30px;
+        width:200px;
+        cursor:pointer;
+        margin-top: 100px;
+      }
+      button:hover{
+        background:rgba(0,0,255,0.3);
+      }
+      h2{
+        color:gold;
+      }
+      #alertBox {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(0, 255, 0, 0.7);
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        display: none;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenaier">
+      <h2>PSEUDO🎮 GAMING</h2>
+      <br>
+      <h3>BOYS✅</h3>
+      <br>
+      <b id="output"></b>
+      <button onclick="go()">change</button>
+      <button onclick="copyText()">Copy Name</button>
+    </div>
+
+    <div id="alertBox">Name copied successfully!</div>
+
+    <script>
+      function go() {
+        const name = [
+          "IF speed !", "Only F!XA!", "KING•sniper", "h4cker*-*", "ℍ𝕆𝕃𝕐☆", "SIDE", "senoXx", "GHOST%", "DEBUT∇", 
+          "Old _Aziz", "Nemo !", "@cheater", "𝐀𝐛𝐝𝐨𝐮𝐥", "VIReX°", "𝐆!𝐓𝐀", "ｉｌｌｉａｓ✦", "𝙹𝙾𝙺𝙴𝚁", "𝚃!𝚃𝙰", "𝑉𝐸𝑁𝑂𝑀☆",
+          "Dark•Warrior", "Xx_MaSter_xX", "Noob•Slayer", "ShadowHunter", "ProGamer99", "Nightmare_X", "FrostBite", "TheReaper", 
+          "FireStorm", "SilentKiller", "ThunderFury", "NinjaGhost", "Dominator", "QuickScopeX", "PhantomX", "EliteSniper", 
+          "CyberPunk", "ToxicVenom", "DeadShot", "WolfHunter", "AssassinZero", "FatalStrike", "Inferno", "StormRider", 
+          "IronClaw", "NightStalker", "Venomous", "DoomSlayer", "BlitzKrieg", "StealthMode", "Vortex", "HyperDrive", "ZeroFear",
+          "ShadowFox", "FierceTiger", "DragonSlayer", "SkyWalker", "NeonBlade", "GhostWalker", "VenomStrike", "OmegaX", 
+          "DeadlyAim", "LightningFast", "DarkFury", "NightRider", "DemonKing", "TornadoX", "ArcticSniper", "BladeRunner", 
+          "InfernalGhost", "RapidFire", "CyberSniper", "DarkAssassin", "MysticWarrior", "SilentHawk", "AtomicBomber", 
+          "StormBreaker", "EpicGamer", "WarpDrive", "SolarFlare", "UltraKiller", "BlazingSpeed", "ShadowSniper", 
+          "CyberWraith", "DaggerX", "FatalPhantom", "IronShadow", "StormShadow", "HyperVenom", "NovaBlast", "ChaosKnight", 
+          "UltimateX", "TitanRage", "NeonNinja", "HavocBringer", "CelestialX", "GravitySniper", "ThunderClap", "FrostWarrior", 
+          "SolarX", "DarkPhoenix", "DemonHunter", "WarpSpeed", "AtomicX", "FinalBoss", "RogueSniper", "StormX"
+        ];
+        
+        const autchange = name[Math.floor(Math.random() * name.length)];
+        const fonts = ["Arial", "Courier New", "Georgia", "Lucida Console", "Verdana", "Tahoma", "Times New Roman"];
+        const selectedFont = fonts[Math.floor(Math.random() * fonts.length)];
+
+        document.getElementById('output').innerHTML = `<span style="font-family:${selectedFont};">${autchange}</span>`;
+      }
+
+      function copyText() {
+        const output = document.getElementById('output').innerText;
+        if (output) {
+          navigator.clipboard.writeText(output).then(function() {
+            showAlert();
+          }).catch(function(err) {
+            console.error('Error copying text: ', err);
+          });
+        }
+      }
+
+      function showAlert() {
+        const alertBox = document.getElementById('alertBox');
+        alertBox.style.display = 'block';
+        setTimeout(function() {
+          alertBox.style.display = 'none';
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
